@@ -1,5 +1,5 @@
 # Upload this file to google cloud as a secret with:
-# kubectl --namespace=example-rapidpro create secret generic example-rapidpro-environment --from-env-file=k8s-example/example-rapidpro.envfile
+# kubectl --namespace=example-rapidpro create secret generic rapidpro-environment --from-env-file=k8s-example/rapidpro.envfile
 
 MANAGEPY_COLLECTSTATIC=on
 MANAGEPY_MIGRATE=on

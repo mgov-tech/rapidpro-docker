@@ -1,5 +1,5 @@
 # Upload this file to google cloud as a secret with:
-# kubectl --namespace=example-rapidpro create secret generic example-rapidpro-mailroom-environment --from-env-file=k8s-example/example-rapidpro-mailroom.envfile
+# kubectl --namespace=example-rapidpro create secret generic rapidpro-mailroom-environment --from-env-file=k8s-example/rapidpro-mailroom.envfile
 
 MAILROOM_AUTH_TOKEN=mailr00m-auth
 MAILROOM_DB=postgres://example_rapidpro:password@localhost:5432/example_rapidpro?sslmode=disable

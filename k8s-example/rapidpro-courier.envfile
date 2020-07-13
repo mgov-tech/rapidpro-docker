@@ -1,5 +1,5 @@
 # Upload this file to google cloud as a secret with:
-# kubectl --namespace=example-rapidpro create secret generic example-rapidpro-courier-environment --from-env-file=k8s-example/example-rapidpro-courier.envfile
+# kubectl --namespace=example-rapidpro create secret generic rapidpro-courier-environment --from-env-file=k8s-example/rapidpro-courier.envfile
 
 COURIER_DB=postgres://example_rapidpro:password@localhost:5432/example_rapidpro?sslmode=disable
 COURIER_REDIS=redis://localhost:6379/0
