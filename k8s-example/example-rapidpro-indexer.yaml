@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: rapidpro-indexer
-  namespace: example-rapidpro
+  namespace: prod-rapidpro
   labels:
     app: rapidpro-indexer
 spec:
@@ -13,7 +13,7 @@ spec:
       app: rapidpro-indexer
   template:
     metadata:
-      namespace: example-rapidpro
+      namespace: prod-rapidpro
       labels:
         app: rapidpro-indexer
     spec:

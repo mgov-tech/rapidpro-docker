@@ -2,7 +2,7 @@ kind: Elasticsearch
 apiVersion: elasticsearch.k8s.elastic.co/v1
 metadata:
   name: example-prod
-  namespace: example-rapidpro
+  namespace: prod-rapidpro
 spec:
   version: 6.8.8
   http:
