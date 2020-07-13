@@ -87,7 +87,7 @@ spec:
         namespace: example-rapidpro
       spec:
         accessModes: ['ReadWriteOnce']
-        storageClassName: example-gce-ssd
+        storageClassName: storage-class-ssd
         resources:
           requests:
             storage: 100Gi

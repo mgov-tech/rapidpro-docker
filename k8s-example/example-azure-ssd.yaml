@@ -3,6 +3,7 @@ kind: StorageClass
 metadata:
   name: storage-class-ssd
   namespace: prod-rapidpro
-provisioner: kubernetes.io/gce-pd
+provisioner: kubernetes.io/azure-disk
 parameters:
-  type: pd-ssd
+  storageaccounttype: Standard_LRS
+  kind: Shared

@@ -58,7 +58,7 @@ spec:
         resources:
           requests:
             storage: 100Gi
-        storageClassName: example-gce-ssd
+        storageClassName: storage-class-ssd
   - name: data-nodes
     count: 2
     config:
@@ -107,4 +107,4 @@ spec:
         resources:
           requests:
             storage: 100Gi
-        storageClassName: example-gce-ssd
+        storageClassName: storage-class-ssd
