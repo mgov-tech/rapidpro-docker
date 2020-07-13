@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rapipro-nginx
+  namespace: prod-rapidpro
+  labels:
+    deployment: rapipro-nginx
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      deployment: rapipro-nginx
+  template:
+    metadata:
+      namespace: prod-rapidpro
+      labels:
+        deployment: rapipro-nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.18.0
+        ports:
+        - name: http
+          containerPort: 80
+        volumeMounts:
+        - mountPath: /etc/nginx
+          readOnly: true
+          name: prod-nginx-conf
+      volumes:
+      - name: prod-nginx-conf
+        configMap:
+          name: prod-nginx-conf
+          items:
+          - key: nginx.conf
+            path: nginx.conf
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rapidpro-nginx-svc
+  namespace: prod-rapidpro
+spec:
+  # comment or delete the following line if you want to use a LoadBalancer
+  type: NodePort
+  # if your cluster supports it, uncomment the following to automatically create
+  # an external load-balanced IP for the frontend service.
+  # type: LoadBalancer
+  # loadBalancerIP: "35.197.54.121"
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: rapidpro-nginx
