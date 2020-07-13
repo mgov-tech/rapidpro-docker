@@ -21,6 +21,8 @@ spec:
     spec:
       containers:
         - env:
+            - name: RAPIDPRO_REPO
+              value: mgov-tech/rapidpro
             - name: MANAGEPY_COLLECTSTATIC
               valueFrom:
                 secretKeyRef:
