@@ -1,1 +1,2 @@
 .ci/vars.yml
+k8s-example/prod-*.envfile
